@@ -85,6 +85,8 @@ function checkNotAuthenticated(req, res, next) {
   next()
 }
 
+app.use(express.static(__dirname + '/public'));
+
 app.listen(8080, function () {
   console.log('Dashboard up on port 8080!');
 });
