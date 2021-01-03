@@ -27,7 +27,9 @@
       </div>
       <button type="submit">Login</button>
     </form>
-    <button class="register"><a href="/register">Register</a></button>
+    <button class="register"><a href="/register">Register</a></button><br><br>
+    <script src="//connect.facebook.net/en_US/sdk.js"></script>
+    <button class="btn btn-primary fb-btn" (click)="fbLogin()"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> Login With Facebook</button>
   </div>
 </body>
 </html>
