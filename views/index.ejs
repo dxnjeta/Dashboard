@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css" />
   <title>Dashboard</title>
 </head>
 <body>
-  <h1>Hi <%= name %></h1>
-  <form action="/logout?_method=DELETE" method="POST">
-    <button type="submit">Log Out</button>
-  </form>
+  <div class="container1">
+    <p>Hi <%= name %></p>
+    <div class="p2">WELCOME TO DASHBOARD</div>
+  </div>
+  <div class="container">
+    <form action="/logout?_method=DELETE" method="POST">
+      <button class="logout" type="submit">Log Out</button>
+    </form>
+  </div>
 </body>
 </html>
