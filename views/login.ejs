@@ -12,9 +12,9 @@
     <p>DASHBOARD</p>
   </div>
   <div class="container">
-    <% if (messages.error) { %>
+    <p class="error"><% if (messages.error) { %>
     <%= messages.error %>
-    <% } %>
+    <% } %></p>
     <form class="form-1" action="/login" method="POST">
       <h1 class="text">Login</h1>
       <div class="field">

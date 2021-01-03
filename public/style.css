@@ -43,6 +43,9 @@ head {
     font-size: 50px !important;
 }
 
+.error {
+    font-size: 25px !important;
+}
 
 .container1 {
     margin-top: 80px;
