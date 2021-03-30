@@ -1,6 +1,25 @@
-body {
-    background-color: cornflowerblue;
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+    background-color: #31102F;
+    background: radial-gradient(ellipse at center, rgba(49,16,47,1) 0%, rgba(40,11,41,1) 100%);
+    /* background: linear-gradient(to right, #ecf0f1, #7f8c8d); */
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  
+  }
+  
+  #stars {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 16rem;
+    height: 100vh;
+    z-index: 1;
+  }
 
 head {
     background-color: cornflowerblue;
@@ -28,23 +47,37 @@ head {
 
 }
 
+.ball {
+    position: absolute;
+    border-radius: 100%;
+    opacity: 0.7;
+  }
+
 .form-1 .field {
     position: relative; /* For the icon positioning */
 }
 
 .container {
-    margin-top: 50px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     display: block;
 }
 
+
 .container1 .p2 {
     font-size: 50px !important;
+    color: #eeefef !important;
 }
+
+.container1 p {
+    color: #eeefef !important;
+}
+
 
 .error {
     font-size: 25px !important;
+    color: #eeefef !important;
+
 }
 
 .container1 {
@@ -52,7 +85,7 @@ head {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     display: block;
-    font-size: 80px;
+    font-size: 50px;
     font-weight: bold;
 }
 
@@ -124,28 +157,338 @@ head {
     outline: none;
 }
 
+#button {
+    padding: 10px 25px;
+    border: none;
+    color: #eeefef;
+    border-radius: 5px;
+    background: linear-gradient(to right, #8B008B, #8A2BE2);
+}
+
+#button:hover {
+    background: linear-gradient(to left, #8B008B, #8A2BE2);
+}
+
 .form-1 button[type=submit] {
     align-items: center;
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 10px;
-    padding: 5px 10px;
+    /* padding: 5px 10px; */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: #f9f9f9;
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* position: fixed !important; */
+}
+
+.navbar-brand img {
+    opacity: 0.8 !important;
+}
+
+.navbar-brand img:hover {
+    opacity: 1 !important;
+}
+
+a {
+    opacity: 0.8 !important;
+}
+
+a:hover {
+    opacity: 1 !important;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    text-align: left;
+    flex: 50%;
+    padding: 10px;
+}
+
+.column h2 {
+    font-size: 55px;
+    font-weight: 700;
+    padding-top: 70px;
+    color: #ffffff;
+    padding-bottom: 30px;
+}
+
+.column p {
+    font-size: 20px !important;
+    color: #ffffff;
+    padding-bottom: 30px;
+}
+
+.info {
+    margin-top: 50px;
+}
+
+.fas {
+    width: 1.3em !important;
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .inf {
+      display: block !important;
+    }
+    .display-1 {
+      font-size: 3rem;
+    }
+  }
+
 .register {
     align-items: center;
-    font-size: 18px;
-    padding: 5px 10px;
+    font-size: 20px;
+   
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: #f9f9f9;
+}
+
+.register a {
+    color: #eeefef !important;
 }
 
 .logout {
     align-items: center;
-    font-size: 25px;
-    padding: 15px 20px;
+    font-size: 20px;
+    /* padding: 15px 20px; */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: #f9f9f9;
 }
+
+
+.widget {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    height: 300px;
+    width: 600px;
+    transform: translate(-50%, -50%);
+    flex-wrap: wrap;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+  }
+  
+  .weatherLocation{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #fafafa;
+  }
+  
+  .weatherLocation button{
+    background: #080705;
+    color:#fff;
+    border: 1px solid transparent;
+  }
+  .weatherLocation input:focus{
+    outline: 0 none;
+  }
+  
+  .widget .weatherIcon {
+    flex: 1 100%;
+    height: 60%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: #FAFAFA;
+    font-family: weathericons;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 100px;
+  }
+  .widget .weatherIcon i {
+    padding-top: 30px;
+  }
+  .widget .weatherInfo {
+    flex: 0 0 70%;
+    height: 40%;
+    background: #080705;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  .widget .weatherInfo .temperature {
+    flex: 0 0 40%;
+    width: 100%;
+    font-size: 35px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .widget .weatherInfo .description {
+    flex: 0 60%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .widget .weatherInfo .description .weatherCondition {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 100;
+  }
+  .widget .weatherInfo .description .place {
+    font-size: 15px;
+  }
+  .widget .date {
+    flex: 0 0 30%;
+    height: 40%;
+    background: rgb(68, 112, 207);
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+  }
+  
+#section07 a {
+  padding-top: 80px;
+} 
+#section07 a span {
+  position: absolute;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb07 2s infinite;
+  animation: sdb07 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+}
+#section07 a span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+#section07 a span:nth-of-type(2) {
+  -webkit-animation-delay: .15s;
+  animation-delay: .15s;
+}
+#section07 a span:nth-of-type(3) {
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+@-webkit-keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#section2 {
+  font-size: 60px;
+  /* background-image: url("../assets/galaxy.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+
+#section2 p {
+  padding-top: 250px;
+  padding-bottom: 180px;
+  font-family: 'Staatliches', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* footer */
+
+.footer-basic {
+  padding:40px 0;
+  background-color: #222;
+  color:#ffffff;
+  border-color: #080808;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+
+
+/* weather */
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" style="background: yellowgreen;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="shortcut icon" href="#">
+    <title>Dashboard</title>  
+</head>
+<body style="background: yellowgreen;">
+    <script src="../js/app.js"></script>
+    <div class="row justify-content-center align-self-center pnt-container" style="margin-top: 120px;">
+
+        <div class="main-container card justify-content-md-center" style="width: 60rem; text-align: center; border: none; border-radius: 10px;">
+            <h1 class="big-hd card-header" style="background: cadetblue;">Check Weather</h1>
+            <div class="form-container card-body" style="margin: 15px auto; text-align: center;">
+                <form action="/" method="post" class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" name="citynames" class="cityNames form-control" placeholder="Enter a city name" autocomplete="off" style="font-size: 20px;">
+                    </div>
+                    <div class="btn-btn">
+                        <button type="submit" class="submit-btn btn btn-primary mb-2 btn-lg ">Check</button>
+                    </div>
+    
+                </form>
+            </div>
+            <div class="weather-info-container" style="background: cadetblue;">
+                <% if(data !== null){%>
+                <ul class="list-group list-group-flush" style="font-size: 18px;">
+    
+                    <li class="list-group-item"><%=data.name + " " + data.sys.country %></li>
+                    <li class="list-group-item"><%=data.main.temp + ` Degrees Celcius` %></li>
+                    <!-- <li class="list-group-item"><%=data.weather[0].description %></li> -->
+                    <li class="list-group-item"><%=data.weather[0].main %></li>
+                </ul>
+    
+                <img src=<%=img %>>
+                <% }%>
+    
+                <% if(error!==null){%>
+                <p style="font-size: 15px; margin-top: 10px;"><%=error %></p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <form action="/" style="text-align: center; margin: 30px auto;">
+        <button id="button" style="font-size: 15px; background: linear-gradient(45deg, cadetblue, #335556);" type="submit">Go back to DASHBOARD</button>
+    </form>
+</body>
+</html>

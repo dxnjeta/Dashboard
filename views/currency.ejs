@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="shortcut icon" href="#">
+    <title>Dashboard</title>
+</head>
+<body style="background: #1b1b1b;">
+    <script src="../js/app.js"></script>
+    <div class="card" style="background: linear-gradient(45deg, cadetblue, #335556); margin: 100px auto; border-radius: 20px; text-align: center; width: 65%;">
+        <h1 style="margin-top: 50px; font-size: 35px; font-weight: bold;">Convert different currency values</h1>
+        <form role="form" id="currencyForm" action="/currency" method="post">
+            <div class="row" style="margin: 100px 0 50px 0;">
+                <div class="col" style="font-size: 20px;">
+                    <label for="fromCurrency">Currency I Have:</label>
+                    <select name="fromCurrency" id="fromCurrency">
+                        <option value="USD" selected>US Dollar USD</option>
+                        <option value="EUR">Euro EUR</option>
+                        <option value="GBP">British Pound GBP</option>
+                        <option value="CAD">Canadian Dollar CAD</option>
+                        <option value="ALL">Albanian Lek ALL</option>
+                        <option value="ADF">Andorran Franc* ADF</option>
+                        <option value="JPY">Japanese Yen JPY</option>
+                        <option value="KGS">Kyrgyzstanian Som KGS</option>
+                        <option value="MKD">Macedonian Denar MKD</option>
+                        <option value="NOK">Norwegian Kroner NOK</option>
+                        <option value="CHF">Swiss Franc CHF</option>
+                        <option value="TRY">Turkish Lira TRY</option>
+                        <option value="UZS">Uzbekistan Som UZS</option>
+                    </select>
+                </div>
+                <div class="col" style="font-size: 20px;">
+                    <label for="toCurrency">Currency I Want:</label>
+                    <select name="toCurrency" id="toCurrency">
+                        <option value="USD">US Dollar USD</option>
+                        <option value="EUR" selected>Euro EUR</option>
+                        <option value="GBP">British Pound GBP</option>
+                        <option value="CAD">Canadian Dollar CAD</option>
+                        <option value="ALL">Albanian Lek ALL</option>
+                        <option value="ADF">Andorran Franc* ADF</option>
+                        <option value="JPY">Japanese Yen JPY</option>
+                        <option value="KGS">Kyrgyzstanian Som KGS</option>
+                        <option value="MKD">Macedonian Denar MKD</option>
+                        <option value="NOK">Norwegian Kroner NOK</option>
+                        <option value="CHF">Swiss Franc CHF</option>
+                        <option value="TRY">Turkish Lira TRY</option>
+                        <option value="UZS">Uzbekistan Som UZS</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="font-size: 20px;">
+                    <label for="amount">Amount</label>
+                    <input type="number" name="amount" id="amount" required>
+                </div>
+            </div>
+            <div class="row" style="margin: 50px 0;">
+                <div class="col">
+                    <button id="button" style="text-align: center; font-size: 15px; font-weight: 500; color: black; background: linear-gradient(45deg, white, cadetblue, white);" type="submit">Convert</button>
+                </div>
+            </div>
+        </form>
+        <% if(data !== null){%>
+            <div>
+                <p style="text-align: center; margin-bottom: 20px; font-size: 22px; font-weight: 700; font-family: 'Times New Roman', Times, serif;"><%= amountTo %> <%= firstCurrency %> converted to <%= secondCurrency %> is <%= amountRes %></p>
+            </div>
+        <% }%>
+        <% if(error!==null){%>
+            <p style="font-size: 15px; margin-top: 10px; font-weight: 600; margin-bottom: 15px;"><%=error %></p>
+        <% } %>
+
+    </div>
+    <form action="/" style="text-align: center; margin: 30px auto;">
+        <button id="button" style="font-size: 15px; background: linear-gradient(45deg, cadetblue, #335556);" type="submit">Go back to DASHBOARD</button>
+    </form>
+</body>
+</html>

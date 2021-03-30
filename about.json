@@ -1,0 +1,45 @@
+{
+    "client": {
+        "host": "10.101.53.35"
+    },
+    "server": {
+        "current_time": 1531680780,
+        "services": [{
+            "name": "weather",
+            "widgets": [{
+                "name": "city_temperature",
+                "description": "Display temperature for a city",
+                "params": [{
+                    "name": "city",
+                    "type": "string"
+                }]
+           }]
+        }, {
+            "name": "mail",
+            "widgets": [{
+                "name": "nodemailer_mail",
+                "description": "Send email using nodemailer",
+                "params": [{
+                    "name": "receiver_email"
+                }, {
+                    "name": "subject"
+                }, {
+                    "name": "message"
+                }]
+            }]
+        }, {
+            "name": "currency",
+            "widgets": [{
+                "name": "currency_converter",
+                "description": "Convert different types of currency",
+                "params": [{
+                    "name": "actualCurrency"
+                }, {
+                    "name": "currencyToConvert"
+                }, {
+                    "name": "amount"
+                }]
+            }]
+        }]
+    }
+}
