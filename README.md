@@ -2,16 +2,20 @@
 **ORGANIZE ALL YOUR TRUSTED SOURCES IN ONE PLACE**
 
 
-INFO: 
-  To use mail service, you must use your own gmail, and make sure that "Less secure app access" is enabled.
+INFO:
+
+To use mail service, you must use your own gmail, and make sure that "Less secure app access" is enabled.
+
       - server.js file, line 76, update it with your gmail
       - server.js file, line 77, update it with the password of your gmail
 
 # Installation
-docker-compose build
+
+      docker-compose build
 
 # Running
-docker-compose up
+      
+      docker-compose up
 
 # Services
 ## Weather
