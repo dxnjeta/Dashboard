@@ -73,8 +73,8 @@ const transporter = nodemailer.createTransport(smtpTransport({
   service: 'gmail',
   host: 'smtp.gmail.com', 
   auth: {        
-       user: 'dashboard.project.2021@gmail.com',
-       pass: 'Dashbo@rdpr0ject'
+       user: 'your_email@gmail.com',
+       pass: 'password'
   }
 }));
 
